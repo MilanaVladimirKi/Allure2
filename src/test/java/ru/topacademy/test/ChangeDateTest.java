@@ -1,5 +1,8 @@
 package ru.topacademy.test;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -28,6 +31,16 @@ public class ChangeDateTest {
     @BeforeEach
     public void setup() {
         open("http://localhost:9999");
+    }
+
+    @AfterAll
+    public static void testAll() {
+        SelenideLogger.removeListener("allure");
+    }
+
+    @BeforeAll
+    public static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @Test
