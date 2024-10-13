@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import ru.topacademy.data.DataGenerator;
 
+import io.qameta.allure.selenide.AllureSelenide;
+
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
